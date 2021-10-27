@@ -498,4 +498,121 @@ public class Bloco3 {
         }
         return resultado;
     }
+    //exercicio 7, bloco 3
+    public static boolean capicuaA (int numero){
+        int numInvertido = 0;
+        int i = 1;
+        int j = 10;
+        int k = 1;
+        int contaALgarismos = 0;
+        boolean resultado;
+
+        if (numero<0){
+            numero = Math.abs(numero);
+        }
+        while (numero / k > 0){
+            contaALgarismos ++;
+            k = k * 10;
+        }
+        contaALgarismos -= 1;
+        j = (int) Math.pow(j,contaALgarismos);
+
+        while (numero / i > 0){
+            numInvertido += ((numero / i) % 10) * j;
+            i = i * 10;
+            j = j / 10;
+        }
+        if (numero == numInvertido){
+            resultado = true;
+        } else {
+            resultado = false;
+        }
+        return resultado;
+    }
+    public static boolean amstrongB (int numero){
+        boolean resultado = false;
+        double somaCubos = 0;
+        int i = 1;
+
+        while (numero / i > 0){
+            somaCubos += Math.pow((numero / i) % 10,3);
+            i = i * 10;
+        }
+        if (somaCubos == numero){
+            resultado = true;
+        }
+
+        return resultado;
+    }
+    public static int primeiraCapicuaC (int limInf, int limSup){//não valida os limites daqui para baixo
+        int primeiraCapicua = 0;
+        boolean eCapicua;
+
+        for (int i = limInf; i<= limSup; i++){
+            eCapicua = Bloco3.capicuaA(i);
+            if (eCapicua == true){
+                primeiraCapicua = i;
+                break;
+            }
+        }
+
+        return primeiraCapicua;
+    }
+    public static int maiorCapicuaD (int limInf, int limSup){
+        int maiorCapicua = 0;
+        int capicua;
+        boolean eCapicua;
+
+        for (int i = limInf; i<= limSup; i++){
+            eCapicua = Bloco3.capicuaA(i);
+            if (eCapicua == true){
+                capicua = i;
+                if (capicua > maiorCapicua){
+                    maiorCapicua = capicua;
+                }
+            }
+        }
+
+        return maiorCapicua;
+    }
+    public static int numeroDeCapicuasE (int limInf, int limSup){
+        int numeroDeCapicuas = 0;
+        boolean eCapicua;
+
+        for (int i = limInf; i<= limSup; i++){
+            eCapicua = Bloco3.capicuaA(i);
+            if (eCapicua == true){
+                numeroDeCapicuas++;
+            }
+        }
+
+        return numeroDeCapicuas;
+    }
+    public static int primeiroAmstrongF (int limInf, int limSup){
+        int primeiroAmstrong = 0;
+        boolean eAmstrong;
+
+        for (int i = limInf; i<= limSup; i++){
+            eAmstrong = Bloco3.amstrongB(i);
+            if (eAmstrong == true){
+                primeiroAmstrong = i;
+                break;
+            }
+        }
+
+        return primeiroAmstrong;
+    }
+    public static int numeroDeAmstrongG (int limInf, int limSup){
+        int contaAmstrong = 0;
+        boolean eAmstrong;
+
+        for (int i = limInf; i<= limSup; i++){
+            eAmstrong = Bloco3.amstrongB(i);
+            if (eAmstrong == true){
+                contaAmstrong++;
+            }
+        }
+
+        return contaAmstrong;
+    }
 }

@@ -162,8 +162,8 @@ class Bloco3Test {
     // ex 6 bloco 3 testes
     @Test
     void numeroAlgarismosAteste1() {
-        int expected = 3;
-        int result = Bloco3.numeroAlgarismosA(123);
+        int expected = 12;
+        int result = Bloco3.numeroAlgarismosA(12345678910L);
         assertEquals(expected,result);
     }
     @Test
@@ -452,6 +452,121 @@ class Bloco3Test {
     void inverteAlgarismosJteste4() {
         long expected = 1;
         long result = Bloco3.inverteAlgarismosJ(1);
+        assertEquals(expected,result);
+    }
+    // ex 7 bloco 3 testes
+    @Test
+    void capicuaAteste1() {
+        boolean expected = true;
+        boolean result = Bloco3.capicuaA(323);
+        assertEquals(expected,result);
+    }
+    @Test
+    void capicuaAteste2() {
+        boolean expected = true;
+        boolean result = Bloco3.capicuaA(1221);
+        assertEquals(expected,result);
+    }
+    @Test
+    void capicuaAteste3() {
+        boolean expected = false;
+        boolean result = Bloco3.capicuaA(1569);
+        assertEquals(expected,result);
+    }
+    @Test
+    void capicuaAteste4() {
+        boolean expected = true; //li que um nº só com 1 algarismo é sempre capicua
+        boolean result = Bloco3.capicuaA(1);
+        assertEquals(expected,result);
+    }
+    @Test
+    void amstrongBteste1() {
+        boolean expected = true;
+        boolean result = Bloco3.amstrongB(153);
+        assertEquals(expected,result);
+    }
+    @Test
+    void amstrongBteste2() {
+        boolean expected = true;
+        boolean result = Bloco3.amstrongB(370);
+        assertEquals(expected,result);
+    }
+    @Test
+    void amstrongBteste3() {
+        boolean expected = true;
+        boolean result = Bloco3.amstrongB(1);
+        assertEquals(expected,result);
+    }
+    @Test
+    void primeiraCapicuaCteste1() {
+        int expected = 11;
+        int result = Bloco3.primeiraCapicuaC(10,100);
+        assertEquals(expected,result);
+    }
+    @Test
+    void primeiraCapicuaCteste2() {
+        int expected = 22;
+        int result = Bloco3.primeiraCapicuaC(12,100);
+        assertEquals(expected,result);
+    }
+    @Test
+    void primeiraCapicuaCteste3() {
+        int expected = 0; //valor esperado quando não há nenhuma.
+        int result = Bloco3.primeiraCapicuaC(12,14);
+        assertEquals(expected,result);
+    }
+    @Test
+    void maiorCapicuaDteste1() {
+        int expected = 22;
+        int result = Bloco3.maiorCapicuaD(10,30);
+        assertEquals(expected,result);
+    }
+    @Test
+    void maiorCapicuaDteste2() {
+        int expected = 33;
+        int result = Bloco3.maiorCapicuaD(10,35);
+        assertEquals(expected,result);
+    }
+    @Test
+    void numeroDeCapicuasEteste1() {
+        int expected = 3;
+        int result = Bloco3.numeroDeCapicuasE(10,35);
+        assertEquals(expected,result);
+    }
+    @Test
+    void numeroDeCapicuasEteste2() {
+        int expected = 4;
+        int result = Bloco3.numeroDeCapicuasE(10,45);
+        assertEquals(expected,result);
+    }
+    @Test
+    void primeiroAmstrongFteste1() {
+        int expected = 153;
+        int result = Bloco3.primeiroAmstrongF(150,155);
+        assertEquals(expected,result);
+    }
+    @Test
+    void primeiroAmstrongFteste2() {
+        int expected = 0; //valor esperado quando não existe nenhum nº de amstrong
+        int result = Bloco3.primeiroAmstrongF(2,10);
+        assertEquals(expected,result);
+    }
+    @Test
+    void numeroDeAmstrongGteste1() {
+        int expected = 1;
+        int result = Bloco3.numeroDeAmstrongG(150,155);
+        assertEquals(expected,result);
+    }
+    @Test
+    void numeroDeAmstrongGteste2() {
+        int expected = 0;
+        int result = Bloco3.numeroDeAmstrongG(150,152);
+        assertEquals(expected,result);
+    }
+    @Test
+    void numeroDeAmstrongGteste3() {
+        int expected = 4;
+        int result = Bloco3.numeroDeAmstrongG(100,999);
         assertEquals(expected,result);
     }
 }
