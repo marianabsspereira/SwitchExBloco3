@@ -51,7 +51,7 @@ public class Bloco3Ex12 {
             resultado = "Equação tem 1 raíz: " + sol1;
         } else if (b == 0 && c > 0) {
             resultado = "Equação não tem soluções em R";
-        } else if (c== 0) {
+        } else if (c == 0) {
             resultado = "Equação incompleta";
         } else {
             resultado = "Erro";
